@@ -1,0 +1,112 @@
+.offers {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  &__list {
+    @include listReset;
+
+    display: grid;
+    grid-template-columns: 1fr 624px 1fr;
+    grid-template-rows: auto;
+    gap: $gapGrid;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, 511px);
+      gap: 24px;
+    }
+  }
+
+  &__item {
+    min-height: 511px;
+  }
+
+  // &__item--big {
+  //   grid-column: 2 / span 2;
+
+  //   @media (max-width: 1200px) {
+  //     grid-column: 2 / span 1;
+  //   }
+
+  //   @media (max-width:576px) {
+  //     grid-column: 1 / 2;
+  //     grid-row: 2 / 3;
+  //   }
+  // }
+
+  &__item--display {
+    @media (max-width: 992px) {
+      display: none;
+    }
+
+    @media (max-width:576px) {
+      display: list-item;
+    }
+  }
+
+  &__item--none {
+    display: none;
+
+    @media (max-width: 576px) {
+      display: list-item;
+    }
+  }
+
+  &__article {
+    padding-top: 72px;
+
+    @media (max-width: 576px) {
+      padding: 30px;
+      padding-top: 72px;
+    }
+  }
+
+  &__img, picture {
+    align-self: center;
+  }
+
+  &__img {
+    max-height: 245px;
+    object-fit: contain;
+
+    @media (max-width: 1200px) {
+      height: 218px;
+    }
+
+    @media (max-width: 992px) {
+      height: 210px;
+    }
+
+    @media (max-width: 576px) {
+      height: 218px;
+    }
+  }
+
+  &__price-tag {
+    display: flex;
+    align-items: center;
+    gap: $gapCards;
+  }
+
+  &__sale {
+    @include textReset;
+
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 23px;
+    color: $orangeColor;
+  }
+
+  &__price {
+    text-decoration: line-through;
+  }
+
+}

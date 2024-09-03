@@ -1,0 +1,272 @@
+.footer {
+  position: relative;
+
+  @media (max-width: 992px) {
+    padding-top: 25px;
+  }
+
+  &__container {
+    display: flex;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    gap: 250px;
+    align-items: center;
+
+    @media (max-width: 1200px) {
+      gap: 32px;
+    }
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+      gap: 22px;
+    }
+  }
+
+  &__logo {
+    width: 187px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: $gapCards;
+
+    @media (max-width: 992px) {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 20px;
+
+    @media (max-width: 992px) {
+      margin-right: 50px;
+    }
+
+    @media (max-width: 576px) {
+      margin-right: 0;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    max-width: 843px;
+    width: 100%;
+    justify-content: space-between;
+
+    @media (max-width: 1200PX) {
+      gap: 88px;
+    }
+
+    @media (max-width: 992px) {
+      gap: 22px;
+    }
+
+    @media (max-width: 576px) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 19px;
+      row-gap: 23px;
+
+      --offsets: 1;
+      --gap: 19px;
+    }
+  }
+
+  &__list {
+    @include listReset;
+
+    @media (max-width: 576px) {
+      width: calc((100% - var(--gap) * var(--offsets)) / (var(--offsets) + 1));
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 4px;
+
+    @media (max-width: 576px) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__title {
+    @include textReset;
+    @include darkMenuText;
+
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 16px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    @media (max-width: 992px) {
+      // font-size: 14px;
+      // line-height: 20px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: calc(100% + 22px);
+      height: calc(100% + 6px);
+      top: -3px;
+      left: -11px;
+      z-index: -1;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &:focus {
+      outline: none;
+      color: $darkGrayColor;
+
+      &::before {
+        background-color: $focusColor;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: $violetColor;
+      }
+    }
+
+    &:active {
+      color: $activeColor;
+
+      &::before {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__link {
+    @include textReset;
+    @include grayMenuText;
+
+    position: relative;
+    display: inline-block;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: calc(100% + 22px);
+      height: calc(100% + 6px);
+      top: -3px;
+      left: -11px;
+      z-index: -1;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &:focus {
+      outline: none;
+      color: $activeColor;
+
+      &::before {
+        background-color: $focusColor;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: $violetColor;
+      }
+    }
+
+    &:active {
+      color: $activeColor;
+
+      &::before {
+        background-color: transparent;
+      }
+    }
+
+  }
+
+  &__copyright {
+    @include textReset;
+    @include mainGrayText;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: center;
+    color: $grayColor;
+    background-color: $bgGrayColor;
+  }
+
+  &__icon {
+    position: relative;
+    width: auto;
+    height: 30px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: calc(100% + 6px);
+      height: calc(100% + 6px);
+      top: -3px;
+      left: -3px;
+      z-index: -1;
+      transition: all 0.3s ease-in-out;
+
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }
+
+    svg {
+      fill: $grayColor;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:focus {
+      outline: none;
+
+      &::before {
+        background-color: $hoverColor;
+      }
+
+      svg {
+        fill: $whiteColor;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: transparent;
+
+        svg {
+          fill: $violetColor;
+        }
+      }
+    }
+
+    &:active {
+      background-color: transparent;
+
+      svg {
+        fill: $activeColor;
+      }
+    }
+  }
+
+  &__top {
+    background-color: $footerGrayColor;
+  }
+}

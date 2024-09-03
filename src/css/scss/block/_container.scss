@@ -1,0 +1,116 @@
+.container {
+  margin: 0 auto;
+  padding: 0 36px;
+  max-width: $containerMaxWidth;
+  width: 100%;
+
+  @media (max-width: 1200px) {
+    position: relative;
+  }
+
+  @media (max-width: 992px) {
+    padding-left: 72px;
+    padding-right: 72px;
+  }
+
+  @media (max-width: 576px) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  &__title {
+    @include textReset;
+    @include sectionTitle;
+
+    margin-bottom: 26px;
+
+    @media (max-width: 1200px) {
+      margin-bottom: 25px;
+    }
+
+    @media (max-width:576px) {
+      margin-bottom: 27px;
+      font-size: 24px;
+      line-height: 24px;
+      font-weight: 400;
+    }
+  }
+
+  &__title--margin {
+    margin-bottom: 9px;
+  }
+
+  &__subtitle {
+    @include textReset;
+    @include articleTitle;
+
+    @media (max-width:576px) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+
+  &__crambs {
+    @include listReset;
+    display: flex;
+
+    @media (max-width:576px) {
+      display: none;
+    }
+  }
+
+  &__point+&__point {
+    &::before {
+      content: "\00a0/\00a0";
+      color: $grayColor;
+    }
+
+  }
+
+  &__link {
+    @include textReset;
+    @include grayMenuText;
+
+    position: relative;
+    display: inline-block;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: calc(100% + 22px);
+      height: calc(100% + 6px);
+      top: -3px;
+      left: -11px;
+      z-index: -1;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &:focus {
+      outline: none;
+      color: $activeColor;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: $violetColor;
+      }
+    }
+
+    &:active {
+      color: $activeColor;
+
+      &::before {
+        background-color: transparent;
+      }
+    }
+  }
+
+ &__link--violet {
+  color: $activeColor;
+ }
+
+ &__crambs--margin {
+  margin-bottom: 32px;
+ }
+}

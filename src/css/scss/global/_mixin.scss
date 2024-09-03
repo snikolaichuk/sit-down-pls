@@ -1,0 +1,169 @@
+@mixin textReset {
+  margin: 0;
+}
+
+@mixin inputReset {
+  padding: 0;
+	outline: none;
+	resize: none;
+	background-color: transparent;
+}
+
+@mixin btnReset {
+  padding: 0;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+@mixin listReset {
+  margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+@mixin grayMenuText {
+  font-size: 14px;
+  line-height: 14px;
+  color: $grayColor;
+}
+
+@mixin darkMenuText {
+  font-size: 16px;
+  line-height: 21px;
+  color: $darkGrayColor;
+}
+
+@mixin whiteTagText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: $whiteColor;
+}
+
+@mixin offerTagText {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 700;
+  color: $whiteColor;
+}
+
+@mixin mainGrayText {
+  font-size: 14px;
+  line-height: 19px;
+  color: #666;
+}
+
+@mixin productCardText {
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 400;
+  color: $darkGrayColor;
+}
+
+@mixin inputStyles {
+  padding: 18px 0;
+  padding-left: 59px;
+  border: 2px solid transparent;
+  border-radius: $borderRadius;
+  background-color: $bgGrayColor;
+}
+
+@mixin btnMain {
+  border-radius: $borderRadius;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+@mixin btnViolet {
+  padding: 21px 49px;
+  border: 2px solid transparent;
+  font-weight: 700;
+  color: $whiteColor;
+  background-color: $violetColor;
+  transition: all 0.3s ease-in-out;
+
+  &:focus {
+    outline: none;
+    border-color: $activeColor;
+    background-color: $hoverColor;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $hoverColor;
+    }
+  }
+
+  &:active {
+    background-color: $activeColor;
+  }
+
+  &:disabled {
+    color: $grayColor;
+    background-color: $footerGrayColor;
+  }
+}
+
+@mixin btnVioletBorder {
+  padding: 17px 33px;
+  border: 2px solid $violetColor;
+  font-weight: 600;
+  color: $violetColor;
+  transition: all 0.3s ease-in-out;
+
+  &:focus {
+    outline: none;
+    border: 2px solid $violetColor;
+    background-color: $hoverColor;
+    color: $whiteColor;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: $violetColor;
+      background-color: $violetColor;
+      color: $whiteColor;
+    }
+  }
+
+  &:active {
+    border-color: $activeColor;
+    background-color: $activeColor;
+    color: $whiteColor;
+  }
+}
+
+@mixin sectionTitle {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 400;
+  color: $darkGrayColor;
+}
+
+@mixin cardLayout {
+  padding: $paddingCards;
+  border-radius: $borderRadius;
+  background-color: $bgGrayColor;
+}
+
+@mixin articleTitle {
+  font-size: 24px;
+  line-height: 31px;
+  font-weight: 400;
+  color: $darkGrayColor;
+}
+
+@mixin cooperationText {
+  font-size: 16px;
+  line-height: 29px;
+  font-weight: 400;
+  color: $grayColor666;
+}
+
+@mixin cooperationTextAdaptive {
+  font-size: 14px;
+  line-height: 25px;
+}

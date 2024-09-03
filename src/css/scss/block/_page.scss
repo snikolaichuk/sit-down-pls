@@ -1,0 +1,8 @@
+.page {
+  &__hero,
+  &__new-collection {
+    @media (max-width: 576px) {
+      margin-bottom: 92px;
+    }
+  }
+}

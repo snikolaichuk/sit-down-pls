@@ -1,0 +1,102 @@
+.helpful {
+  padding-bottom: 70px;
+
+  &__list {
+    @include listReset;
+
+    display: flex;
+    gap: $gapGrid;
+
+    --offsets: 1;
+
+    @media (max-width: 1200px) {
+      --offsets: 2;
+    }
+
+    @media (max-width: 992px) {
+      --offsets: 1;
+    }
+
+    @media (max-width: 576px) {
+      flex-wrap: wrap;
+      gap: 24px;
+
+      --offsets: 0;
+    }
+  }
+
+  &__item {
+    width: calc((100% - $gapGrid * var(--offsets)) / (var(--offsets) + 1));
+  }
+
+  &__item--display {
+    display: none;
+
+    @media (max-width: 1200px) {
+      display: list-item;
+    }
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+
+    @media (max-width: 576px) {
+      display: list-item;
+    }
+  }
+
+  &__item--none {
+    display: none;
+
+    @media (max-width:576px) {
+      display: list-item;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    min-height: 456px;
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    gap: 38px;
+    justify-content: space-between;
+    min-height: 250px;
+    height: 100%;
+    border-radius: 0 0 10px 10px;
+    background-color: $bgGrayColor;
+
+    @media (max-width: 1200px) {
+      gap: 16px;
+    }
+  }
+
+  &__img {
+    display: block;
+  }
+
+  &__text {
+    @include textReset;
+    @include articleTitle;
+
+    line-height: 33px;
+
+    @media (max-width: 1200px) {
+      @include darkMenuText;
+      line-height: 22px;
+    }
+  }
+
+  &__btn {
+    @include btnMain;
+    @include btnVioletBorder;
+
+    display: inline-block;
+    align-self: flex-start;
+  }
+}

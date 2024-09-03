@@ -1,0 +1,148 @@
+.article {
+  @include cardLayout;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  height: 100%;
+
+  @media (max-width: 576px) {
+    padding: 16px;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
+  &__price {
+    @include textReset;
+    @include darkMenuText;
+
+    color: $grayColor;
+  }
+
+  &__link {
+    &:focus {
+      outline: none;
+
+      h3 {
+        color: $activeColor;
+      }
+    }
+  }
+
+  &__title {
+    @include textReset;
+    @include articleTitle;
+  }
+
+  &__title--small {
+    @media (max-width:576px) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+
+  &__title--lh {
+    @media (max-width: 576px) {
+      line-height: 17px;
+    }
+  }
+
+  &__span {
+    display: block;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 23px;
+  }
+
+  &__content--bgimg {
+    &::before {
+      content: '';
+      position: absolute;
+      width: 230px;
+      height: 107px;
+      bottom: 30px;
+      right: 30px;
+      background-image: url('../img/offers-img21.png');
+
+      @media (max-width: 1200px) {
+        display: none;
+      }
+    }
+  }
+
+  &__btn {
+    @include btnMain;
+    @include btnVioletBorder;
+
+    align-self: flex-start;
+  }
+
+  &__tag {
+    @include textReset;
+    @include offerTagText;
+
+    position: absolute;
+    padding: 7px 15px;
+    top: 30px;
+    left: 0;
+    min-height: 34px;
+    width: 84px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: $orangeColor;
+
+    @media (max-width: 576px) {
+      font-size: 12px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 83px;
+      width: 0;
+      height: 0;
+      border-top: 17px solid transparent;
+      border-left: 10px solid $orangeColor;
+      border-bottom: 17px solid transparent;
+    }
+  }
+
+  &__star {
+    @include textReset;
+    @include darkMenuText;
+    color: $orangeColor;
+
+    position: absolute;
+    top: 30px;
+    left: 30px;
+
+    @media (max-width: 576px) {
+      top: 16px;
+      left: 16px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    &::before {
+      content: '';
+      display: inline-block;
+      margin-right: 6px;
+      width: 16px;
+      height: 15px;
+      background-image: url('../img/star.svg');
+
+      @media (max-width: 576px) {
+        width: 13px;
+        height: 12px;
+        background-image: url('../img/star-576.svg');
+      }
+    }
+  }
+}

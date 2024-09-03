@@ -1,0 +1,195 @@
+.feedback {
+  padding-bottom: 68px;
+
+  @media (max-width: 992px) {
+    padding-bottom: 70px;
+  }
+
+  @media (max-width: 576px) {
+    padding-bottom: 68px;
+  }
+
+  &__container {
+    display: flex;
+    gap: $gapGrid;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 624px;
+      height: auto;
+      background-image: url('../img/feedback.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 0 25px;
+
+      @media (max-width: 1200px) {
+        width: 514px;
+        background-position: 0 77px;
+      }
+
+      @media (max-width: 992px) {
+        width: 187px;
+        background-position: 0 13px;
+        background-image: url('../img/feedback768.svg');
+      }
+
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }
+  }
+
+  &__block {
+    max-width: 49%;
+
+    @media (max-width: 1200px) {
+      max-width: 405px;
+    }
+  }
+
+  &__text {
+    @include textReset;
+    @include mainGrayText;
+    margin-bottom: 17px;
+
+    @media (max-width: 576px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text--margin {
+    margin-bottom: 0;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $gapCards;
+  }
+
+  &__input {
+    @include inputReset;
+    @include inputStyles;
+
+    width: 100%;
+    padding: 16px 0;
+    padding-left: 17px;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+      border-color: $violetColor;
+      background-color: $violetBgColor;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $footerGrayColor;
+      }
+    }
+
+    &:active {
+      border-color: transparent;
+      background-color: $bgGrayColor;
+    }
+
+    &::placeholder {
+      font-size: 16px;
+      line-height: 19px;
+      color: $grayColor;
+    }
+  }
+
+  &__btn {
+    @include btnViolet;
+
+    display: block;
+    margin-bottom: 12px;
+    padding: 18px 32px;
+  }
+
+  &__checkbox>input{
+    position: absolute;
+    z-index: -10;
+    opacity: 0;
+  }
+
+  &__checkbox>span {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+
+    @media (max-width: 576px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      border: 1px solid $grayColor;
+      border-radius: 3px;
+      margin-right: 8px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 50% 50%;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__checkbox>input:not(:disabled):not(:checked)+span:hover::before {
+    border-color: $violetColor;
+  }
+
+  &__checkbox>.input:not(:disabled):active+span::before {
+    border-color: $violetColor;
+    background-color: $violetColor;
+  }
+
+  &__checkbox>input:focus+span::before {
+    border-color: $activeColor;
+    box-shadow: inset 0 0 0.2rem $violetColor;
+  }
+
+  &__checkbox>input:focus:not(:checked)+span::before {
+    border-color: $activeColor;
+  }
+
+  &__checkbox>input:checked+span::before {
+    border-color: $violetColor;
+    background-color: $violetColor;
+    background-image: url('../img/path.svg');
+  }
+
+  &__checkbox>input:disabled+span::before {
+    background-color: $footerGrayColor;
+  }
+
+  &__link {
+    color: $violetColor;
+    border-bottom: 1px solid $violetColor;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+      outline: none;
+      background-color: $hoverColor;
+      color: $darkGrayColor;
+      border-color: transparent;
+    }
+
+    &:hover {
+      border-color: transparent;
+    }
+
+    &:active {
+      border-color: $activeColor;
+      color: $activeColor;
+      background-color: transparent;
+    }
+  }
+
+}

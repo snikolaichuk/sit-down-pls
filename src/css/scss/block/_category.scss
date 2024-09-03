@@ -1,0 +1,378 @@
+.category {
+  padding-top: 70px;
+  padding-bottom: 69px;
+
+  &__list {
+    @include listReset;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 33px;
+
+    @media (max-width: 576px) {
+      gap: 32px;
+      column-gap: 16px;
+    }
+  }
+
+  &__item--sofa {
+    grid-column: 1 / span 3;
+    min-height: 511px;
+
+    @media (max-width: 1200px) {
+      grid-column: 1 / span 4;
+    }
+
+    @media (max-width: 992px) {
+      grid-column: 1 / span 6;
+    }
+
+    @media (max-width: 576px) {
+      min-height: 332px;
+    }
+  }
+
+  &__item--armchair {
+    grid-column: 4 / span 3;
+    min-height: 511px;
+
+    @media (max-width: 1200px) {
+      grid-column: 3 / span 2;
+      grid-row: 2 / 3;
+    }
+
+    @media (max-width: 992px) {
+      grid-column: 4 / span 3;
+      grid-row: 2 / 3;
+      min-height: 511px;
+    }
+
+    @media (max-width: 576px) {
+      min-height: 206px;
+    }
+  }
+
+  &__item--bed {
+    grid-column: 1 / span 2;
+    grid-row: 2 / 3;
+    min-height: 405px;
+
+    @media (max-width: 1200px) {
+      grid-column: 5 / span 2;
+      grid-row: 1 / 2;
+    }
+
+    @media (max-width: 992px) {
+      grid-column: 1 / span 3;
+      grid-row: 2 / 3;
+      min-height: 511px;
+    }
+
+    @media (max-width: 576px) {
+      min-height: 206px;
+    }
+  }
+
+  &__item--commode {
+    grid-column: 3 / span 2;
+    grid-row: 2 / 3;
+    min-height: 405px;
+
+    @media (max-width: 1200px) {
+      grid-column: 1 / span 2;
+    }
+
+    @media (max-width: 992px) {
+      grid-column: 1 / span 3;
+      grid-row: 3 / 4;
+      min-height: 511px;
+    }
+
+    @media (max-width: 576px) {
+      min-height: 206px;
+    }
+  }
+
+  &__item--chair {
+    grid-column: 5 / span 2;
+    grid-row: 2 / 3;
+    min-height: 405px;
+
+    @media (max-width: 992px) {
+      grid-column: 4 / span 3;
+      grid-row: 3 / 4;
+      min-height: 511px;
+    }
+
+    @media (max-width: 576px) {
+      min-height: 206px;
+    }
+  }
+
+  &__article {
+    justify-content: space-between;
+    gap: $gapCards;
+
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: left 121px;
+
+    @media (max-width: 576px) {
+      background-size: contain;
+    }
+
+    @media (max-width: 576px) {
+      padding: 16px;
+      gap: 16px;
+      background-position: left bottom 16px;
+    }
+  }
+
+  &__article--sofa {
+    background-image: url('../img/category-img1.png');
+  }
+
+  &__article--armchair {
+    background-image: url('../img/category-img2.png');
+
+    @media (max-width: 1200px) {
+      background-image: url('../img/category-img2-1024.png');
+    }
+
+    @media (max-width: 576px) {
+      background-image: url('../img/category-img2-576.png');
+    }
+  }
+
+  &__article--bed {
+    background-image: url('../img/category-img3.png');
+
+    @media (max-width: 1200px) {
+      background-image: url('../img/category-img3-1024.png');
+    }
+
+    @media (max-width: 576px) {
+      background-image: url('../img/category-img3-576.png');
+    }
+  }
+
+  &__article--commode {
+    background-image: url('../img/category-img4.png');
+
+    @media (max-width: 1200px) {
+      background-image: url('../img/category-img4-1024.png');
+    }
+
+    @media (max-width: 576px) {
+      background-image: url('../img/category-img4-576.png');
+    }
+  }
+
+  &__article--chair {
+    background-image: url('../img/category-img5.png');
+
+    @media (max-width: 1200px) {
+      background-image: url('../img/category-img5-1024.png');
+    }
+
+    @media (max-width: 576px) {
+      background-image: url('../img/category-img5-576.png');
+    }
+  }
+
+  &__article--big {
+    @media (max-width: 576px) {
+      padding: 30px;
+    }
+  }
+
+  &__menu {
+    @include listReset;
+
+    display: flex;
+    margin-bottom: 14px;
+    gap: 30px;
+
+    @media (max-width: 576px) {
+      gap: 20px;
+    }
+  }
+
+  &__menu--vertical {
+    @media (max-width: 576px) {
+      margin-bottom: 7px;
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
+
+  &__link {
+    @include textReset;
+    @include grayMenuText;
+
+    position: relative;
+    display: inline-block;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: calc(100% + 22px);
+      height: calc(100% + 6px);
+      top: -3px;
+      left: -11px;
+      z-index: -1;
+      transition: background-color 0.3s ease-in-out;
+
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      color: $activeColor;
+
+      &::before {
+        background-color: $focusColor;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: $violetColor;
+      }
+    }
+
+    &:active {
+      color: $activeColor;
+
+      &::before {
+        background-color: transparent;
+      }
+    }
+
+  }
+
+  &__point {
+    line-height: 1;
+
+    @media (max-width: 576px) {
+      line-height: 0;
+    }
+  }
+
+  &__link--small {
+    @media (max-width: 576px) {
+      font-size: 10px;
+      line-height: 10px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__title--align {
+    align-items: flex-end;
+  }
+
+  &__svg {
+    display: none;
+    min-width: 22px;
+    height: 22px;
+
+    @media (max-width: 576px) {
+      display: block;
+    }
+  }
+
+  &__arrow {
+    min-width: 22px;
+    height: 22px;
+  }
+
+  &__btn {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+    color: $violetColor;
+
+    @media (max-width: 576px) {
+      display: none;
+    }
+
+    span {
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease-in-out;
+    }
+
+    svg {
+      border: 2px solid $violetColor;
+      border-radius: 50%;
+      background-color: transparent;
+      transition: all 0.3s ease-in-out;
+    }
+
+    path {
+      stroke: $violetColor;
+      transition: stroke 0.3s ease-in-out;
+    }
+
+    &:focus {
+      outline: none;
+
+      span {
+        border-color: $violetColor;
+      }
+
+      svg {
+        background-color: $hoverColor;
+      }
+
+      path {
+        stroke: $whiteColor;
+      }
+
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        span {
+          border-color: $violetColor;
+        }
+
+        svg {
+          background-color: $violetColor;
+        }
+
+        path {
+          stroke: $whiteColor;
+        }
+
+      }
+    }
+
+    &:active {
+      span{
+        color: $activeColor;
+        border-color: $activeColor;
+      }
+
+      svg {
+        border-color: $activeColor;
+        background-color: $activeColor;
+      }
+
+      path {
+        stroke: $whiteColor;
+      }
+    }
+  }
+}

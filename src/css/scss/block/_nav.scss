@@ -1,0 +1,92 @@
+.nav {
+  @media (max-width: 576px) {
+    padding-top: 16px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__list {
+    @include listReset;
+    display: flex;
+    align-items: center;
+    gap: 92px;
+
+    @media (max-width: 1200px) {
+      gap: 42px;
+    }
+
+    @media (max-width: 992px) {
+      margin-bottom: 34px;
+      gap: 40px;
+    }
+
+    @media (max-width: 576px) {
+      width: 100%;
+      margin-bottom: 0;
+      flex-wrap: nowrap;
+      gap: 30px;
+
+    }
+  }
+
+  &__item {
+    @media (max-width: 576px) {
+      flex: 0 0 auto;
+    }
+  }
+
+  &__link {
+    @include textReset;
+    @include darkMenuText;
+
+    position: relative;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    @media (max-width: 992px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: calc(100% + 22px);
+      height: calc(100% + 6px);
+      top: -3px;
+      left: -11px;
+      z-index: -1;
+      transition: background-color 0.3s ease-in-out;
+
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      color: $darkGrayColor;
+
+      &::before {
+        background-color: $focusColor;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: $violetColor;
+      }
+    }
+
+    &:active {
+      color: $activeColor;
+
+      &::before {
+        background-color: transparent;
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+.cooperation {
+  padding-bottom: 70px;
+
+  &__block {
+    max-width: 843px;
+
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__block--small {
+    max-width: 624px;
+  }
+
+  &__subtitle {
+    margin-bottom: 12px;
+  }
+
+  &__subtitle--size {
+    @media (max-width: 576px) {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+
+  &__text {
+    @include textReset;
+    @include cooperationText;
+
+    @media (max-width: 576px) {
+      @include cooperationTextAdaptive;
+    }
+  }
+
+  &__text--line-height {
+    line-height: 24px;
+
+    @media (max-width: 576px) {
+      line-height: 21px;
+    }
+  }
+
+  &__descr {
+    @include textReset;
+
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    color: $orangeColor;
+  }
+
+  &__list {
+    @include listReset;
+  }
+
+  &__item {
+    display: flex;
+    gap: 12px;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      min-width: 25px;
+      height: 25px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 25px 25px;
+    }
+  }
+
+  &__item--first {
+    &::before {
+      background-image: url('../img/cooperation-img1.svg');
+    }
+  }
+
+  &__item--second {
+    &::before {
+      background-image: url('../img/cooperation-img2.svg');
+    }
+  }
+
+  &__item--third {
+    &::before {
+      background-image: url('../img/cooperation-img3.svg');
+    }
+  }
+
+  &__point {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__para {
+    display: flex;
+    gap: 12px;
+    counter-increment: num;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    &::before {
+      content: counter(num) ". ";
+      font-size: 16px;
+      line-height: 29px;
+      font-weight: 600;
+      color: $orangeColor;
+    }
+  }
+
+  &__pen {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    @media (max-width: 576px) {
+      gap: 16px;
+    }
+
+    &::before {
+      content: '';
+      width: 77px;
+      height: 116px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url('../img/cooperation-pen.svg');
+    }
+  }
+}

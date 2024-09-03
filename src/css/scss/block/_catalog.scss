@@ -1,0 +1,154 @@
+.catalog {
+  padding-bottom: 70px;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 296px auto;
+    grid-template-rows: repeat(3, auto);
+    gap: 32px;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, auto);
+      gap: 24px;
+    }
+  }
+
+  &__crambs {
+    grid-column: 1 / span 2;
+    grid-row: 1 / 2;
+  }
+
+  &__left {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__block {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
+    @media (max-width: 1200px) {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 24px;
+  }
+
+  &__list {
+    @include listReset;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gapGrid;
+
+    --gap: 32px;
+    --offsets: 2;
+
+    @media (max-width: 1200px) {
+      --offsets: 2;
+    }
+
+    @media (max-width: 992px) {
+      --offsets: 1;
+    }
+
+    @media (max-width: 576px) {
+      gap: 16px;
+
+      --gap: 16px;
+    }
+  }
+
+  &__item {
+    width: calc((100% - var(--gap) * var(--offsets)) / (var(--offsets) + 1));
+    min-height: 420px;
+
+    @media (max-width: 576px) {
+      min-height: 278px;
+    }
+  }
+
+  &__item--display {
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  &__article {
+   padding-top: 61px;
+
+    @media (max-width: 576px) {
+      padding-top: 43px;
+    }
+  }
+
+  &__img {
+    height: 130px;
+    object-fit: contain;
+
+    @media (max-width: 1200px) {
+      height: 125px;
+    }
+
+    @media (max-width: 576px) {
+      height: 53px;
+    }
+  }
+
+  &__content {
+    @media (max-width: 576px) {
+      gap: 16px;
+    }
+  }
+
+  &__btn {
+    @media (max-width:576px) {
+      padding: 12px 25px;
+    }
+  }
+
+  &__numbering {
+    @include listReset;
+
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+    @media (max-width: 1200px) {
+      grid-column: 1 / 2;
+      grid-row: 4 / 5;
+    }
+  }
+
+  &__number-btn {
+    @include btnVioletBorder;
+
+    padding: 6px 10px;
+    border-radius: $borderRadius;
+  }
+
+  &__number-btn--violet {
+    border-color: $activeColor;
+    color: $whiteColor;
+    background-color: $activeColor;
+  }
+
+  &__number-btn--display {
+    display: none;
+
+    @media (max-width: 992px) {
+      display: inline-block;
+    }
+  }
+}
